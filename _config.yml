@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Home"
 title_separator          : "-"
 name                     : &name "Nurshat (Nulixiati) Menglik (Mangnike)"
-description              : &description "personal description"
+description              : &description "Nurshat Menglik — PhD student in Computer Science at Vanderbilt University working on machine learning for computer graphics and computational physics."
 url                      : https://nurshat317.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "https://github.com/Nurshat317"
@@ -73,7 +73,7 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "google-universal" # false (default), "google", "google-universal", "custom"
+  provider               :  false # false (default), "google", "google-universal", "custom"
   google:
     tracking_id          :
 
@@ -96,7 +96,6 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  CV : "http://nurshat317.github.io/files/CV_Nurshat.pdf"
   github           : "Nurshat317"
   google_plus      :
   keybase          :

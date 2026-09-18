@@ -9,16 +9,16 @@ redirect_from:
 ---
 
 
-I am currently a research and teaching assistant at [Vanderbilt University](https://www.vanderbilt.edu/), where I am pursuing a PhD in computer science under the guidance of Professor [David Hyde](https://dabh.io/#). My academic journey began at  [Peking University](https://www.pku.edu.cn/) where I earned my bachelor's degree in computer science.
+I am a PhD student in computer science at [Vanderbilt University](https://www.vanderbilt.edu/) (expected May 2027), advised by Professor [David Hyde](https://dabh.io/#), where I work as a research and teaching assistant. Before Vanderbilt, I earned my bachelor's degree in computer science at [Peking University](https://www.pku.edu.cn/). In summer 2025 I was a software engineering intern at Amazon Web Services (AWS).
 
-My research focuses on integrating advanced machine-learning techniques with traditional computer graphics and computational physics. Additionally, I have a strong interest in parallel computing, 3D computer vision and generative models. For a more comprehensive overview of me, please refer to the detailed information provided in my [Resume](http://nurshat317.github.io/files/Nurshat_Resume.pdf).
+My research combines machine learning with computer graphics and computational physics. Recent work includes a size-aware 3D virtual try-on pipeline built on 3D Gaussian Splatting, implicit neural representations for compressing high-resolution simulation data, physics-informed networks that improve Boussinesq flow models using compressible-flow simulations, diffusion models for 3D shape synthesis, and physics-grounded video generation. I am also interested in parallel computing and 3D computer vision. For more detail, see my [Resume](/files/Nurshat_Resume.pdf).
 
 
 
 Skills
 ------
-C/C++, Python, CUDA, Matlab, JavaScript, OpenGl, PyTorch, JAX,
-Houdini, Unity3D, Blender, COMSOL Multiphysics, FEniCS
+C/C++, Python, C#, MATLAB, JavaScript, TypeScript, CUDA, PyTorch, TensorFlow, JAX,
+OpenGL, Houdini, Unity, Blender, COMSOL Multiphysics, FEniCS, Mathematica
 
 Personal
 ------
