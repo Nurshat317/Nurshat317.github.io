@@ -1,0 +1,21 @@
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      {%- for item in site.data.navigation.sections %}
+      <a class="site-nav__link" href="{{ '/' | relative_url }}#{{ item.id }}" data-section="{{ item.id }}">{{ item.title }}</a>
+      {%- endfor %}
+    </nav>
+
+    <div class="site-header__tools">
+      <a class="btn btn--ghost btn--sm" href="{{ site.author.resume | relative_url }}">{% include site/icon.html name="file" %}Resume</a>
+      <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+        {% include site/icon.html name="moon" %}{% include site/icon.html name="sun" %}
+      </button>
+      <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        {% include site/icon.html name="menu" %}
+      </button>
+    </div>
+  </div>
+</header>

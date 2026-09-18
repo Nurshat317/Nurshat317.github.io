@@ -20,3 +20,18 @@ main:
     
 #  - title: "Guide"
 #    url: /markdown/
+
+# Section links in the site header. `id` is the anchor of a section on the home page.
+sections:
+  - title: "About"
+    id: about
+  - title: "Research"
+    id: research
+  - title: "Publications"
+    id: publications
+  - title: "Experience"
+    id: experience
+  - title: "Teaching"
+    id: teaching
+  - title: "Contact"
+    id: contact

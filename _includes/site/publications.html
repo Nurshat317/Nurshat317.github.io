@@ -1,0 +1,41 @@
+<div class="pubs">
+  {%- for pub in site.data.publications %}
+  <article class="pub">
+    {%- if pub.image %}
+    <a class="pub__figure" href="{{ pub.image_full | default: pub.image | relative_url }}" aria-label="Open figure for {{ pub.title | escape }}">
+      <img src="{{ pub.image | relative_url }}" alt="{{ pub.image_alt | escape }}" loading="lazy" decoding="async">
+    </a>
+    {%- else %}
+    <div class="pub__figure pub__figure--empty" aria-hidden="true">
+      <svg viewBox="0 0 300 108" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M0 22 C 60 6, 110 42, 170 24 S 260 8, 300 26"/>
+        <path d="M0 40 C 55 24, 115 62, 175 42 S 255 26, 300 46"/>
+        <path d="M0 58 C 50 44, 120 80, 180 60 S 250 46, 300 64"/>
+        <path d="M0 76 C 58 62, 112 98, 172 78 S 258 64, 300 82"/>
+        <path d="M0 94 C 62 80, 108 112, 168 96 S 262 82, 300 98"/>
+      </svg>
+      <span>{{ pub.badge }}</span>
+    </div>
+    {%- endif %}
+
+    <div class="pub__body">
+      <div class="pub__meta">
+        {%- if pub.badge %}<span class="badge">{{ pub.badge }}</span>{% endif %}
+        {%- if pub.status %}<span class="badge badge--muted">{{ pub.status }}</span>{% endif %}
+      </div>
+      <h3 class="pub__title">{{ pub.title }}</h3>
+      <p class="pub__authors">{{ pub.authors | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+      <p class="pub__venue">{{ pub.venue }}</p>
+      {%- if pub.links %}
+      <div class="pub__links">
+        {%- for link in pub.links %}
+        <a class="btn btn--ghost btn--sm" href="{{ link.url | relative_url }}">
+          {%- if link.label == "Video" %}{% include site/icon.html name="play" %}{% else %}{% include site/icon.html name="file" %}{% endif -%}
+          {{ link.label }}</a>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+    </div>
+  </article>
+  {%- endfor %}
+</div>

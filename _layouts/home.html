@@ -1,0 +1,134 @@
+---
+layout: site
+---
+{%- assign hero = page.hero -%}
+{%- assign profile = site.data.profile -%}
+
+<section class="hero" id="top">
+  <canvas class="hero__flow" id="flow" aria-hidden="true"></canvas>
+  <div class="container hero__inner">
+    <div class="hero__text">
+      <p class="eyebrow">{{ hero.eyebrow }}</p>
+      <h1 class="hero__name">{{ hero.name }}</h1>
+      {%- if hero.alt_name %}
+      <p class="hero__alt">{{ hero.alt_name }}</p>
+      {%- endif %}
+      <p class="hero__tagline">{{ hero.tagline }}</p>
+      <p class="hero__lede">{{ hero.lede | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="{{ site.author.resume | relative_url }}">{% include site/icon.html name="file" %}Resume</a>
+        <a class="btn btn--ghost" href="mailto:{{ site.author.email }}">{% include site/icon.html name="mail" %}Email</a>
+        <a class="icon-btn icon-btn--ring" href="https://github.com/{{ site.author.github }}" rel="me noopener" aria-label="GitHub">{% include site/icon.html name="github" %}</a>
+        <a class="icon-btn icon-btn--ring" href="https://www.linkedin.com/in/{{ site.author.linkedin }}" rel="me noopener" aria-label="LinkedIn">{% include site/icon.html name="linkedin" %}</a>
+      </div>
+    </div>
+
+    <figure class="hero__photo">
+      <img src="{{ site.author.avatar | prepend: '/images/' | relative_url }}" alt="Portrait of {{ hero.name }}" width="539" height="674">
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <header class="section-head"><span class="section-head__num">01</span><h2>About</h2></header>
+    <div class="about">
+      <div class="prose">
+{{ content }}
+      </div>
+      <aside class="about__aside">
+        <h3 class="label">Education</h3>
+        <ul class="facts">
+          {%- for e in profile.education %}
+          <li>
+            <span class="facts__title">{{ e.degree }}</span>
+            <span class="facts__sub">{{ e.school }} · {{ e.when }}</span>
+            {%- if e.note %}<span class="facts__sub">{{ e.note }}</span>{% endif %}
+          </li>
+          {%- endfor %}
+        </ul>
+        <h3 class="label">Interests</h3>
+        <ul class="chips">
+          {%- for i in profile.interests %}<li class="chip">{{ i }}</li>{% endfor %}
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint" id="research">
+  <div class="container">
+    <header class="section-head"><span class="section-head__num">02</span><h2>Research</h2></header>
+    <div class="cards">
+      {%- for r in site.data.research %}
+      <article class="card">
+        <span class="card__num">{{ forloop.index | prepend: "0" }}</span>
+        <h3 class="card__title">{{ r.title }}</h3>
+        <p class="card__text">{{ r.text }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="publications">
+  <div class="container">
+    <header class="section-head"><span class="section-head__num">03</span><h2>Publications</h2></header>
+    {% include site/publications.html %}
+  </div>
+</section>
+
+<section class="section section--tint" id="experience">
+  <div class="container">
+    <header class="section-head"><span class="section-head__num">04</span><h2>Experience</h2></header>
+    <ol class="timeline">
+      {%- for x in site.data.experience %}
+      <li class="tl">
+        <div class="tl__when">{{ x.when }}</div>
+        <div class="tl__body">
+          <h3 class="tl__role">{{ x.role }}</h3>
+          <p class="tl__org">{{ x.org }}</p>
+          <p class="tl__text">{{ x.text }}</p>
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="teaching">
+  <div class="container">
+    <header class="section-head"><span class="section-head__num">05</span><h2>Teaching, honors and skills</h2></header>
+    <div class="split">
+      <div>
+        <h3 class="label">Teaching assistant · Vanderbilt University</h3>
+        {% include site/teaching.html %}
+
+        <h3 class="label label--spaced">Honors and awards</h3>
+        <ul class="rows">
+          {%- for a in profile.awards %}
+          <li class="row">
+            <div>
+              <span class="row__title">{{ a.title }}</span>
+              <span class="row__sub">{{ a.org }}</span>
+              {%- if a.note %}<span class="row__note">{{ a.note }}</span>{% endif %}
+            </div>
+            <span class="row__when">{{ a.year }}</span>
+          </li>
+          {%- endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="label">Skills</h3>
+        <dl class="skills">
+          {%- for s in profile.skills %}
+          <dt>{{ s.group }}</dt>
+          <dd><ul class="chips">{% for item in s.items %}<li class="chip">{{ item }}</li>{% endfor %}</ul></dd>
+          {%- endfor %}
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>

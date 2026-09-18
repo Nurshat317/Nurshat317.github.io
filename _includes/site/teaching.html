@@ -1,0 +1,11 @@
+<ul class="rows">
+  {%- for t in site.data.profile.teaching %}
+  <li class="row">
+    <div>
+      <span class="row__title">{{ t.course }}</span>
+      {%- if t.code %}<span class="row__sub">{{ t.code }}</span>{% endif %}
+    </div>
+    <span class="row__when">{{ t.terms }}</span>
+  </li>
+  {%- endfor %}
+</ul>

@@ -1,0 +1,26 @@
+# Research and work experience, newest first.
+
+- role: "Research Assistant"
+  org: "Vanderbilt University"
+  when: "Aug 2022 – Present"
+  text: "Machine learning for physics simulation and computer graphics with Prof. David Hyde: physics-informed networks for Boussinesq flow, implicit neural representations for simulation data, 3D Gaussian Splatting for virtual try-on, and generative models for 3D shapes and video."
+
+- role: "Software Engineering Intern"
+  org: "Amazon Web Services (AWS)"
+  when: "May 2025 – Aug 2025"
+  text: "Built a user-facing analytics console for real-time visualization of deployment and usage data, backed by a secure full-stack pipeline spanning ingestion, APIs and console UI."
+
+- role: "Research Intern (remote)"
+  org: "University of California, Davis"
+  when: "Jul 2021 – Dec 2021"
+  text: "Implemented differentiable elasticity simulations with FEM and Position-Based Dynamics for learning-based control and optimization; explored the Material Point Method for fracture simulation."
+
+- role: "Research Intern"
+  org: "Institute of Software, Chinese Academy of Sciences"
+  when: "Jan 2021 – Dec 2021"
+  text: "Proposed a semi-analytical surface tension model and integrated it into a GPU-accelerated, CUDA-based SPH pipeline for real-time fluid simulation; contributed to the PeriDyno simulation engine."
+
+- role: "Undergraduate Research Assistant"
+  org: "Peking University"
+  when: "May 2020 – Dec 2020"
+  text: "Implemented mesh and topology optimization for hyper-elasticity simulation; contributed to the PhysIKA physics-based simulation engine."

@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{%- if page.url == "/" -%}
+  {%- assign full_title = site.title | append: " — " | append: site.tagline -%}
+{%- else -%}
+  {%- assign full_title = page.title | append: " · " | append: site.title -%}
+{%- endif -%}
+{%- assign description = page.description | default: site.description -%}
+{%- assign canonical = page.url | replace: "index.html", "" | absolute_url -%}
+{%- assign photo = site.author.avatar | prepend: "/images/" | absolute_url %}
+
+<title>{{ full_title | escape }}</title>
+<meta name="description" content="{{ description | strip_html | escape }}">
+<meta name="author" content="{{ site.title | escape }}">
+<link rel="canonical" href="{{ canonical }}">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:title" content="{{ full_title | escape }}">
+<meta property="og:description" content="{{ description | strip_html | escape }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ photo }}">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="{{ '/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="icon" href="{{ '/images/favicon-32.png' | relative_url }}" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
+<meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0f13" media="(prefers-color-scheme: dark)">
+
+{% comment %} Apply a saved theme before first paint so the page never flashes the wrong colors. {% endcomment %}
+<script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+
+{%- if page.url == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ site.title | jsonify }},
+  "alternateName": {{ site.author.alternate_names | jsonify }},
+  "url": {{ "/" | absolute_url | jsonify }},
+  "image": {{ photo | jsonify }},
+  "jobTitle": "PhD Student in Computer Science",
+  "affiliation": { "@type": "CollegeOrUniversity", "name": "Vanderbilt University" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Peking University" },
+  "email": {{ site.author.email | prepend: "mailto:" | jsonify }},
+  "sameAs": [
+    {{ site.author.github | prepend: "https://github.com/" | jsonify }},
+    {{ site.author.linkedin | prepend: "https://www.linkedin.com/in/" | jsonify }}
+  ]
+}
+</script>
+{%- endif %}

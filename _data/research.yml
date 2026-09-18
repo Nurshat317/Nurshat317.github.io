@@ -1,0 +1,13 @@
+# Research areas shown as cards on the home page.
+
+- title: "Learning-augmented fluid simulation"
+  text: "Physics-informed neural networks that learn corrective dynamics from fully compressible simulations to improve lower-fidelity Boussinesq models, alongside implicit monolithic mixed finite element solvers for Boussinesq and compressible flow."
+
+- title: "Neural representations for simulation data"
+  text: "Implicit neural representations that compress high-resolution 2D and 3D simulation fields while preserving fine-scale structure, fed by large-scale synthetic data pipelines built on parallel FEM solvers (FEniCS)."
+
+- title: "3D virtual try-on"
+  text: "A size-aware, photorealistic garment transfer pipeline that uses 3D Gaussian Splatting for garment reconstruction and rendering."
+
+- title: "Generative models for 3D and video"
+  text: "Diffusion models for 3D shape synthesis across voxel, point-based and implicit representations, and physics-grounded video generation by fine-tuning vision-language models with geometric and physical priors."

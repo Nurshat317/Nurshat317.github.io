@@ -7,7 +7,8 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Home"
+title                    : "Nurshat Menglik"
+tagline                  : "Machine learning for physics simulation and computer graphics"
 title_separator          : "-"
 name                     : &name "Nurshat (Nulixiati) Menglik (Mangnike)"
 description              : &description "Nurshat Menglik — PhD student in Computer Science at Vanderbilt University working on machine learning for computer graphics and computational physics."
@@ -82,6 +83,8 @@ analytics:
 author:
   name             : "Nurshat (Nulixiati) Menglik (Mangnike)"
   avatar           : "myphoto.jpg"
+  resume           : "/files/Nurshat_Resume.pdf"
+  alternate_names  : ["Nurshat Mangnike", "Nulixiati Mangnike"] # other spellings, used in search-engine metadata
   bio              : "PhD Student @ Vanderbilt | Computer Science"
   location         : "Nashville, USA"
   employer         :
@@ -145,6 +148,13 @@ exclude:
   - package.json
   - tmp
   - vendor
+  - CONTRIBUTING.md
+  - CHANGELOG.md
+  - README.md
+  - markdown_generator
+  - talkmap
+  - talkmap.ipynb
+  - talkmap.py
 keep_files:
   - .git
   - .svn
@@ -206,8 +216,7 @@ defaults:
       path: ""
       type: pages
     values:
-      layout: single
-      author_profile: true
+      layout: page
   # _teaching
   - scope:
       path: ""

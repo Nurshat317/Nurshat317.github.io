@@ -1,0 +1,25 @@
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <div class="contact">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2 class="contact__title">Get in touch</h2>
+        <p class="contact__text">I'm always glad to talk about simulation, graphics and machine learning.</p>
+      </div>
+      <div class="contact__links">
+        <a class="contact__email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+        <div class="contact__social">
+          <a class="btn btn--ghost btn--sm" href="https://github.com/{{ site.author.github }}" rel="me noopener">{% include site/icon.html name="github" %}GitHub</a>
+          <a class="btn btn--ghost btn--sm" href="https://www.linkedin.com/in/{{ site.author.linkedin }}" rel="me noopener">{% include site/icon.html name="linkedin" %}LinkedIn</a>
+          <a class="btn btn--ghost btn--sm" href="{{ site.author.resume | relative_url }}">{% include site/icon.html name="file" %}Resume</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__fine">
+      <span>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</span>
+      <span>{% include site/icon.html name="pin" %}{{ site.author.location }}</span>
+      <span>Last updated {{ site.time | date: "%B %Y" }}</span>
+    </div>
+  </div>
+</footer>
