@@ -29,9 +29,14 @@
       {%- if pub.links %}
       <div class="pub__links">
         {%- for link in pub.links %}
+        {%- comment %} External links (arXiv, DOI, code) are used as-is; site files get the base URL. {% endcomment %}
+        {%- if link.url contains "://" %}
+        <a class="btn btn--ghost btn--sm" href="{{ link.url }}" rel="noopener">{% include site/icon.html name="arrow" %}{{ link.label }}</a>
+        {%- else %}
         <a class="btn btn--ghost btn--sm" href="{{ link.url | relative_url }}">
           {%- if link.label == "Video" %}{% include site/icon.html name="play" %}{% else %}{% include site/icon.html name="file" %}{% endif -%}
           {{ link.label }}</a>
+        {%- endif %}
         {%- endfor %}
       </div>
       {%- endif %}

@@ -13,6 +13,9 @@
   venue: "Journal of Computational Physics"
   badge: "JCP"
   status: "Under review"
+  links:
+    - label: arXiv
+      url: https://arxiv.org/abs/2606.25259
 
 - title: "Toward Improving Boussinesq Flow Simulations by Learning with Compressible Flow"
   authors: "**Nurshat Mangnike**, [David Hyde](https://dabh.io/#)"
