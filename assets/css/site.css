@@ -327,6 +327,7 @@ a { color: inherit; text-decoration: none; }
 }
 a.pub__figure:hover { border-color: var(--accent); box-shadow: var(--shadow); }
 .pub__figure img { width: 100%; height: 100%; object-fit: contain; }
+.pub__figure--pad img { padding: 10px 14px; }
 .pub__figure--empty {
   position: relative; display: grid; place-items: center;
   background: var(--surface); color: var(--accent);

@@ -6,13 +6,18 @@
 #   status      optional second pill, e.g. "Under review"
 #   image       thumbnail shown next to the entry (put files in /images/pubs/)
 #   image_full  optional full-size figure opened when the thumbnail is clicked
+#   image_pad   set to true for diagrams, so they do not touch the frame
 #   links       list of {label, url}
 
-- title: "A Practical Implicit Monolithic Mixed Finite Element Method and Implementation for Boussinesq and Compressible Flow"
-  authors: "**Nurshat Mangnike**, Alex Shao, [David Hyde](https://dabh.io/#)"
+- title: "A Neural Surrogate Approach for Simulating Natural Convection Problems"
+  authors: "**Nurshat Menglik**, Alex Shao, [David Hyde](https://dabh.io/#)"
   venue: "Journal of Computational Physics"
   badge: "JCP"
   status: "Under review"
+  image: /images/pubs/fno-architecture.webp
+  image_full: /images/pubs/fno-architecture-full.webp
+  image_pad: true
+  image_alt: "Architecture of the 2D Fourier neural operator: Boussinesq input fields are lifted, passed through iterative Fourier layers and projected to corrected fields, trained against compressible-flow targets"
   links:
     - label: arXiv
       url: https://arxiv.org/abs/2606.25259

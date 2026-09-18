@@ -2,7 +2,7 @@
   {%- for pub in site.data.publications %}
   <article class="pub">
     {%- if pub.image %}
-    <a class="pub__figure" href="{{ pub.image_full | default: pub.image | relative_url }}" aria-label="Open figure for {{ pub.title | escape }}">
+    <a class="pub__figure{% if pub.image_pad %} pub__figure--pad{% endif %}" href="{{ pub.image_full | default: pub.image | relative_url }}" aria-label="Open figure for {{ pub.title | escape }}">
       <img src="{{ pub.image | relative_url }}" alt="{{ pub.image_alt | escape }}" loading="lazy" decoding="async">
     </a>
     {%- else %}
